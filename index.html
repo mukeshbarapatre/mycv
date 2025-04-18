@@ -106,27 +106,23 @@
 <!-- Toggle Button -->
 <div class="container px-5 py-4">
 	<div class="d-flex flex-wrap justify-content-between gap-2">
-	  <button class="btn btn-primary mybutton flex-fill" type="button" data-bs-toggle="collapse" data-bs-target="#workExperienceCollapse" aria-expanded="false">
+	  <button class="btn btn-primary mybutton flex-fill" type="button" data-bs-toggle="collapse" data-bs-target="#workExperienceCollapse" aria-expanded="false" onclick="changeColor(this)">
 		Work Experience
 	  </button>
-	  <button class="btn btn-primary mybutton flex-fill" type="button" data-bs-toggle="collapse" data-bs-target="#achivments" aria-expanded="false">
+	  <button class="btn btn-primary mybutton flex-fill" type="button" data-bs-toggle="collapse" data-bs-target="#achivments" aria-expanded="false" onclick="changeColor(this)">
 		ACHIEVEMENTS/ PARTICIPATION
 	  </button>
-	  <button class="btn btn-primary mybutton flex-fill" type="button" data-bs-toggle="collapse" data-bs-target="#PROFESSIONAL" aria-expanded="false">
+	  <button class="btn btn-primary mybutton flex-fill" type="button" data-bs-toggle="collapse" data-bs-target="#PROFESSIONAL" aria-expanded="false" onclick="changeColor(this)">
 		PROFESSIONAL CERTIFICATION
 	  </button>
-	  <button class="btn btn-primary mybutton flex-fill" type="button" data-bs-toggle="collapse" data-bs-target="#PUBLICATION" aria-expanded="false">
+	  <button class="btn btn-primary mybutton flex-fill" type="button" data-bs-toggle="collapse" data-bs-target="#PUBLICATION" aria-expanded="false" onclick="changeColor(this)">
 		PUBLICATION DEATAILS
 	  </button>
-	  <button class="btn btn-primary mybutton flex-fill" type="button" data-bs-toggle="collapse" data-bs-target="#PERSONAL" aria-expanded="false">
+	  <button class="btn btn-primary mybutton flex-fill" type="button" data-bs-toggle="collapse" data-bs-target="#PERSONAL" aria-expanded="false" onclick="changeColor(this)">
 		PERSONAL PROFILE
-	  </button>
-	  <button class="btn btn-primary mybutton flex-fill" type="button" data-bs-toggle="collapse" data-bs-target="#DECLARATION" aria-expanded="false">
-		DECLARATION
 	  </button>
 	</div>
   </div>
-
 <!-- Collapsible Content -->
 <div class="collapse" id="workExperienceCollapse">
 	<div class="card text-justify">
@@ -261,15 +257,7 @@
 	</div>
 </div>
 
-<div class="collapse" id="DECLARATION">
-	<div class="card text-justify">
-		<div class="card-header">DECLARATION</div>
-		<div class="card-body">
-			<p>All the above information is true to the best of my knowledge.</p>
-			
-		</div>
-	</div>
-</div>
+
 
 	
    <!--
@@ -351,9 +339,33 @@
 		</div>
 	</div>
 
+	<div class="card text-justify">
+		<div class="card-header">DECLARATION</div>
+		<div class="card-body">
+			<p>All the above information is true to the best of my knowledge.</p>
+			
+		</div>
+	</div>
+
     
 
 </div>
+
+<script>
+	// JavaScript function to change button color on click
+	function changeColor(button) {
+	  // Reset all button colors
+	  const buttons = document.querySelectorAll('.mybutton');
+	  buttons.forEach(btn => {
+		btn.style.backgroundColor = '';  // Reset to default color
+		btn.style.borderColor = '';      // Reset border color
+	  });
+	  
+	  // Set the clicked button's color
+	  button.style.backgroundColor = '#28a745';  // Example color for clicked button
+	  button.style.borderColor = '#28a745';      // Example border color
+	}
+  </script>
 <script>
 	$(document).ready(function(){
 		$(".mybutton").on('click',function(){
@@ -372,6 +384,7 @@
       }, 600); // 600ms for smooth scroll
     });
   });
+  
 </script>
 </body>
 </html>
